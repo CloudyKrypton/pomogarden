@@ -12,7 +12,7 @@ body {
 .display-container {
     width: 80vw;
     height: 39vw;
-    background-image: url("images/background.png");
+    background-image: url("../images/background.png");
     background-size: cover;
 }
 
@@ -43,42 +43,42 @@ body {
 }
 
 #bonsai {
-    background-image: url("images/pot.png");
+    background-image: url("../images/pot.png");
     background-size: cover;
 }
 
 #tomato {
-    background-image: url("images/pot.png");
+    background-image: url("../images/pot.png");
     background-size: cover;
 }
 
 #dandelion {
-    background-image: url("images/pot.png");
+    background-image: url("../images/pot.png");
     background-size: cover;
 }
 
 #cactus {
-    background-image: url("images/pot.png");
+    background-image: url("../images/pot.png");
     background-size: cover;
 }
 
 #pothos {
-    background-image: url("images/pot.png");
+    background-image: url("../images/pot.png");
     background-size: cover;
 }
 
 #firenettle {
-    background-image: url("images/pot.png");
+    background-image: url("../images/pot.png");
     background-size: cover;
 }
 
 #mushrooms {
-    background-image: url("images/pot.png");
+    background-image: url("../images/pot.png");
     background-size: cover;
 }
 
 #violet {
-    background-image: url("images/pot.png");
+    background-image: url("../images/pot.png");
     background-size: cover;
 }
 
@@ -110,7 +110,7 @@ body {
     font-family: "Figtree", sans-serif;
     font-weight: 600;
     font-size: 36px;
-    background-image: url("images/clock.png");
+    background-image: url("../images/clock.png");
     background-size: cover;
     border-radius: 5px;
 }
@@ -124,14 +124,34 @@ body {
     font-family: "Figtree", sans-serif;
     font-weight: 600;
     font-size: 36px;
-    background-image: url("images/clock.png");
+    background-image: url("../images/clock.png");
     background-size: cover;
     border-radius: 5px;
 }
 
-.play-btn {
-    height: 4vw;
-    width: 4.5vw;
+.button-holder {
+    padding-top: 2.5vw;
+}
+
+#start-btn {
+    background: url("../images/startbtn.png");
+    background-size: cover;
+    /* background-size: cover; */
+    height: 3.111vw;
+    width: 3.5vw;
+    border-radius: 8px;
+    border-width: none;
+    padding-top: 0.1vw;
+}
+
+#pause-btn {
+    background: url("../images/pausebtn.png");
+    background-size: cover;
+    /* background-size: cover; */
+    height: 3.111vw;
+    width: 3.5vw;
+    border-radius: 8px;
+    border-width: none;
 }
 
 /* Menu */

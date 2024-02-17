@@ -18,6 +18,7 @@
             <div class="display-container">
                 <div class="plant-container">
                     <div id="bonsai" class="plant">Item 1</div>
+                    <div id="text-bonsai"></div>
                     <div id="tomato" class="plant">Item 2</div>
                     <div id="dandelion" class="plant">Item 3</div>
                     <div id="cactus" class="plant">Item 4</div>
@@ -30,8 +31,10 @@
                     <div class="timer">
                         <span id="timer-display">00:05</span>
                         <span id="break-display" style="display: none;">00:03</span>
-                        <button id="start-btn" class="play-btn" onclick="startTimer(); toggleButtons()">START</button>
-                        <button id="pause-btn" class="play-btn" onclick="pauseTimer(); toggleButtons()" style="display: none;">PAUSE</button>  
+                        <div class="button-holder">
+                            <button id="start-btn" onclick="startTimer(); toggleButtons()"></button>
+                            <button id="pause-btn" onclick="pauseTimer(); toggleButtons()" style="display: none;"></button>  
+                        </div>
                     </div>
                 </div>
             </div>
