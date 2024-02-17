@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -7,23 +6,36 @@
         <link rel="stylesheet" href="pomogarden.css">
         <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google" content="notranslate">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="all-container">
+            <div class="menu">info</div>
             <div class="title">pomogarden</div>
-            <div class="plant-container">
-                <div id="plant">Item 1</div>
-                <div id="plant">Item 2</div>
-                <div id="plant">Item 3</div>
-                <div id="plant">Item 4</div>
-                <div id="plant">Item 5</div>
-                <div id="plant">Item 6</div>
-                <div id="plant">Item 7</div>
-                <div id="plant">Item 8</div>
-            </div>
-            <div class="mechanics-container">
-
+            <div class="display-container">
+                <div class="plant-container">
+                    <div id="bonsai" class="plant">Item 1</div>
+                    <div id="tomato" class="plant">Item 2</div>
+                    <div id="dandelion" class="plant">Item 3</div>
+                    <div id="cactus" class="plant">Item 4</div>
+                    <div id="pothos" class="plant">Item 5</div>
+                    <div id="firenettle" class="plant">Item 6</div>
+                    <div id="mushrooms" class="plant">Item 7</div>
+                    <div id="violet" class="plant">Item 8</div>
+                </div>
+                <div class="mechanics-container">
+                    <div class="timer">
+                        <span id="timer-display">00:05</span>
+                        <span id="break-display" style="display: none;">00:03</span>
+                        <button id="start-btn" class="play-btn" onclick="startTimer(); toggleButtons()">START</button>
+                        <button id="pause-btn" class="play-btn" onclick="pauseTimer(); toggleButtons()" style="display: none;">PAUSE</button>  
+                    </div>
+                </div>
             </div>
         </div>
+        <script src="script.js"></script>
     </body>
 </html>
