@@ -5,7 +5,7 @@ body {
 .all-container {
     display: flex;
     align-items: center;
-    padding-top: 5vh;
+    /* padding-top: 5vh; */
     flex-direction: column;
 }
 
@@ -80,6 +80,21 @@ body {
 #violet {
     background-image: url("../images/pot.png");
     background-size: cover;
+}
+
+.plant-text {
+    font-family: 'Figtree', sans-serif;
+    font-size: small;
+}
+
+#text-bonsai {
+    background-color: aliceblue;
+    position: absolute;
+    top: 11vw;
+    left: 27vw;
+    max-width: 8.5vw;
+    padding: 3px;
+    border-radius: 8px;
 }
 
 .mechanics-container {

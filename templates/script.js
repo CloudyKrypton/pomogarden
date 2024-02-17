@@ -12,7 +12,6 @@ const breakDisplay = document.getElementById("break-display");
 // Audio variables
 var notif = new Audio('notification.mp3');
 var clickSound = new Audio('click-sound.mp3');
-var popSound = new Audio('audios/pop-sound.mp3');
 
 // Cycle variables
 var cycleNumber = 1;
@@ -123,11 +122,11 @@ function grow() {
 // Text
 function getData() {
     // Make an AJAX request to the Flask server
-    fetch('/plant_motivate/<plant_index>')
+    fetch('/plant_motivate/1')
         .then(response => response.json())
         .then(data => {
             // Update the result div with the data
-            document.getElementById('result').innerText = data.message;
+            return(data.message);
         })
         .catch(error => console.error('Error:', error));
 }
