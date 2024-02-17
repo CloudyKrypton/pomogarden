@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>pomogarden</title>
+        <link rel="stylesheet" href="pomogarden.css">
+        <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="all-container">
+            <div class="title">pomogarden</div>
+            <div class="plant-container">
+                {% for plant in plants: %}
+                <div id="{{ plant }}">"Div with {{ plant }}"</div>
+                {% endfor %}
+            </div>
+            <div class="mechanics-container">
+
+            </div>
+        </div>
+    </body>
+</html>
