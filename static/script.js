@@ -188,12 +188,10 @@ function grow() {
 
 // Text
 function getData(plantName, typeName, i) {
-    // Make an AJAX request to the Flask server
     if (planted[i] && !isBreak) {
       fetch('/plant_motivate/' + typeName)
         .then(response => response.json())
         .then(data => {
-            // Update the result div with the data
             var loadPlant = document.getElementById("text-" + plantName);
             loadPlant.style.display = "flex";
             document.getElementById('text-' + plantName).innerText = data.msg;
@@ -204,7 +202,6 @@ function getData(plantName, typeName, i) {
       fetch('/plant_fact/' + typeName)
         .then(response => response.json())
         .then(data => {
-            // Update the result div with the data
             var loadPlant = document.getElementById("text-" + plantName);
             loadPlant.style.display = "flex";
             document.getElementById('text-' + plantName).innerText = data.msg;
@@ -234,16 +231,6 @@ function encourage() {
 function clearBubble(plantName) {
   var clearPlant = document.getElementById("text-" + plantName);
   clearPlant.style.display = "none";
-  topUp();
-}
-
-function topUp() {
-  console.log("topup");
-  fetch('/top_up')
-        .then(response => response.json())
-        .then(data => {
-        })
-        .catch(error => console.error('Error:', error));
 }
 
 // Menu
