@@ -45,7 +45,7 @@ def plant_fact(plant_name):
     return jsonify({"msg": fact_msg})
 
 @app.route('/mental_health_fact/<plant_name>', methods=['GET'])
-def plant_fact(plant_name):
+def plant_mh_tip(plant_name):
     plant = plants_dict[plant_name]
     prompt = f"Give me a mental health tip in a manner that fits your personality."
     fact_msg = plant.plant_msg(prompt)
