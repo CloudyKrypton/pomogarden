@@ -54,7 +54,7 @@ body {
     background-size: cover;
 }
 
-#tomato {
+#cactus {
     background-image: url("images/pot.png");
     background-size: cover;
 }
@@ -64,27 +64,27 @@ body {
     background-size: cover;
 }
 
-#cactus {
+#cactus-1 {
     background-image: url("images/pot.png");
     background-size: cover;
 }
 
-#pothos {
+#dandelion-1 {
     background-image: url("images/pot.png");
     background-size: cover;
 }
 
-#firenettle {
+#bonsai-1 {
     background-image: url("images/pot.png");
     background-size: cover;
 }
 
-#mushroom {
+#cactus-2 {
     background-image: url("images/pot.png");
     background-size: cover;
 }
 
-#violet {
+#bonsai-2 {
     background-image: url("images/pot.png");
     background-size: cover;
 }
@@ -108,7 +108,7 @@ body {
     border-color: black;
 }
 
-#text-tomato {
+#text-cactus {
     top: 11vw;
     left: 43vw;
     position: absolute;
@@ -136,7 +136,7 @@ body {
     border-color: black;
 }
 
-#text-cactus {
+#text-cactus-1 {
     top: 11vw;
     left: 72vw;
     position: absolute;
@@ -150,7 +150,7 @@ body {
     border-color: black;
 }
 
-#text-pothos {
+#text-dandelion-1 {
     top: 28vw;
     left: 27vw;
     position: absolute;
@@ -164,7 +164,7 @@ body {
     border-color: black;
 }
 
-#text-firenettle {
+#text-bonsai-1 {
     top: 28vw;
     left: 40vw;
     position: absolute;
@@ -178,7 +178,7 @@ body {
     border-color: black;
 }
 
-#text-mushroom{
+#text-cactus-2 {
     top: 24vw;
     left: 58vw;
     position: absolute;
@@ -192,7 +192,7 @@ body {
     border-color: black;
 }
 
-#text-violet {
+#text-bonsai-2 {
     top: 23vw;
     left: 72vw;
     position: absolute;
