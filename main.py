@@ -22,6 +22,7 @@ def plant_motivate(plant_name):
     plant = plants_dict[plant_name]()
     prompt = "Encourage me to keep studying. Respond in a single sentence."
     motivational_msg = plant.plant_chat(prompt)
+    print(motivational_msg)
     return jsonify({"msg": motivational_msg})
 
 

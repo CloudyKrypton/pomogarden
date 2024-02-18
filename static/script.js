@@ -10,8 +10,8 @@ const timerDisplay = document.getElementById("timer-display");
 const breakDisplay = document.getElementById("break-display");
 
 // Audio variables
-var notif = new Audio('sfx/notification.mp3');
-var clickSound = new Audio('sfx/click-sound.mp3');
+var notif = new Audio('static/sfx/notification.mp3');
+var clickSound = new Audio('static/sfx/click-sound.mp3');
 
 // Cycle variables
 var cycleNumber = 1;
@@ -101,32 +101,40 @@ const bonsai = document.getElementById("bonsai");
 
 function plantSeed() {
     if (cycleNumber == 1) {
-        bonsai.style.backgroundImage = 'url("images/seedling.png")';
+        bonsai.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 2) {
-        tomato.style.backgroundImage = 'url("images/seedling.png")';
+        tomato.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 3) {
-        dandelion.style.backgroundImage = 'url("images/seedling.png")';
+        dandelion.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 4) {
-        cactus.style.backgroundImage = 'url("images/seedling.png")';
+        cactus.style.backgroundImage = 'url("static/images/seedling.png")';
     }
 }
 
 function grow() {
     if (cycleNumber == 2) {
-        bonsai.style.backgroundImage = 'url("images/bonsai-sprout.png")';
+        bonsai.style.backgroundImage = 'url("static/images/bonsai-sprout.png")';
     } else if (cycleNumber == 3) {
-        bonsai.style.backgroundImage = 'url("images/bonsai-grown.png")';
+        bonsai.style.backgroundImage = 'url("static/images/bonsai-grown.png")';
     }
 }
 
 // Text
-function getData() {
+function getData(plantName) {
     // Make an AJAX request to the Flask server
-    fetch('/plant_motivate/<plant_index>')
+    fetch('/plant_motivate/' + plantName)
         .then(response => response.json())
         .then(data => {
             // Update the result div with the data
-            document.getElementById('result').innerText = data.message;
+            var loadPlant = document.getElementById("text-" + plantName);
+            loadPlant.style.display = "flex";
+            document.getElementById('text-' + plantName).innerText = data.msg;
+            setTimeout(function() {clearBubble(plantName); }, 6000);
         })
         .catch(error => console.error('Error:', error));
+}
+
+function clearBubble(plantName) {
+  var clearPlant = document.getElementById("text-" + plantName);
+  clearPlant.style.display = "none";
 }
