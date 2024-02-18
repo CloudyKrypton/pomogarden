@@ -16,10 +16,10 @@ def garden(plants=plants_arr):
 #     plant_name = request.form['plant_name']
 #     plant = plants_dict[plant_name]()
 #     plants.append(plant)
-    
+
 @app.route('/plant_motivate/<plant_index>', methods=['GET'])
-def plant_motivate(plant_index):
-    plant = plants[int(plant_index)]
+def plant_motivate(plant_name):
+    plant = plants_dict[plant_name]()
     prompt = "Encourage me to keep studying. Respond in a single sentence."
     motivational_msg = plant.plant_chat(prompt)
     return jsonify({"msg": motivational_msg})
