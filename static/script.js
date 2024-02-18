@@ -114,29 +114,47 @@ const bonsai2 = document.getElementById("bonsai-2");
 function plantSeed() {
     if (cycleNumber == 1) {
         planted[0] = true;
+        plantedCursor('bonsai');
         bonsai.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 2) {
         planted[1] = true;
+        plantedCursor('cactus');
         cactus.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 3) {
         planted[2] = true;
+        plantedCursor('dandelion');
         dandelion.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 4) {
         planted[3] = true;
+        plantedCursor('cactus-1');
         cactus1.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 5) {
       planted[4] = true;
+      plantedCursor('dandelion-1');
       dandelion1.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 6) {
       planted[5] = true;
+      plantedCursor('bonsai-1');
       bonsai1.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 7) {
       planted[6] = true;
+      plantedCursor('cactus-2');
       cactus2.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 8) {
       planted[7] = true;
+      plantedCursor('bonsai-2');
       bonsai2.style.backgroundImage = 'url("static/images/seedling.png")';
     }
+}
+
+function plantedCursor(plantName) {
+  document.getElementById(plantName).addEventListener('mouseover', function() {
+    this.style.cursor = 'pointer';
+  });
+
+  document.getElementById(plantName).addEventListener('mouseout', function() {
+    this.style.cursor = 'default'; // Change it back to the default cursor on mouseout
+  });
 }
 
 function grow() {
@@ -169,9 +187,10 @@ function grow() {
 }
 
 // Text
-function getData(plantName, typeName) {
+function getData(plantName, typeName, i) {
     // Make an AJAX request to the Flask server
-    fetch('/plant_motivate/' + typeName)
+    if (planted[i] && !isBreak) {
+      fetch('/plant_motivate/' + typeName)
         .then(response => response.json())
         .then(data => {
             // Update the result div with the data
@@ -181,6 +200,18 @@ function getData(plantName, typeName) {
             setTimeout(function() {clearBubble(plantName); }, 6000);
         })
         .catch(error => console.error('Error:', error));
+    } else if (planted[i] && isBreak) {
+      fetch('/plant_fact/' + typeName)
+        .then(response => response.json())
+        .then(data => {
+            // Update the result div with the data
+            var loadPlant = document.getElementById("text-" + plantName);
+            loadPlant.style.display = "flex";
+            document.getElementById('text-' + plantName).innerText = data.msg;
+            setTimeout(function() {clearBubble(plantName); }, 6000);
+        })
+        .catch(error => console.error('Error:', error));
+    }
 }
 
 function encourage() {
