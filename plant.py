@@ -1,4 +1,5 @@
 import cohere
+from documents import Documents, Chatbot
 
 class Plant:
     type: str
@@ -12,7 +13,8 @@ class Plant:
             message=prompt,
             temperature=0.6,
             preamble_override=self.preamble,
-            connectors=[{"id": "web-search"}]
+            connectors=[{"id": "web-search"}],
+            max_tokens=50
         )
 
         print(response.text)
@@ -24,8 +26,8 @@ class Cactus(Plant):
 
 class Bonsai(Plant):
     type = "bonsai"
-    preamble = "You are a wise, patient, and zen bonsai."
+    preamble = "You are a wise, patient, and tranquil elder bonsai."
 
 class Dandelion(Plant):
     type = "dandelion"
-    preamble = "You are a cheerful, energetic, and youthful dandelion."
+    preamble = "You are a cheerful dandelion, bursting with youthful energy."
