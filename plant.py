@@ -11,7 +11,7 @@ class Plant:
         self.msg_stack = {"motivational": [], "congratulatory": [], "fact": []}
 
     def plant_msg(self, prompt, mode) -> str:
-        co = cohere.Client("rsn1V6loPUP5jKrFV2zZWjSLm0iJOTCRzbFc8Kig")
+        co = cohere.Client("IhUjdx3KFbgLXOOMvszmtaJyWBm6wKj9BA5TNmyz")
 
         if mode == "docs":
             response = co.chat(
@@ -20,7 +20,6 @@ class Plant:
                 temperature=1,
                 preamble_override=self.preamble,
                 documents=self.documents,
-                max_tokens=150,
                 prompt_truncation="AUTO"
             )
         elif mode == "web_search":
@@ -30,7 +29,6 @@ class Plant:
                 temperature=0.7,
                 preamble_override=self.preamble,
                 connectors=[{"id": "web-search"}],
-                max_tokens=150,
                 prompt_truncation="AUTO"
             )
 

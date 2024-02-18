@@ -78,14 +78,13 @@ def get_fact(plant_name):
 def top_up():
     for plant in plants_dict.values():
         msg_dict = plant.msg_stack
-        print(plant.type)
         for stack_name in msg_dict.keys():
             if stack_name == "motivational":
-                top_up_helper(msg_dict[stack_name], 4, plant, get_motivate)
+                top_up_helper(msg_dict[stack_name], 3, plant, get_motivate)
             elif stack_name == "congratulatory":
                 top_up_helper(msg_dict[stack_name], 1, plant, get_congratulate)
             elif stack_name == "fact":
-                top_up_helper(msg_dict[stack_name], 4, plant, get_fact)
+                top_up_helper(msg_dict[stack_name], 3, plant, get_fact)
             else:
                 return "0"
     return "1"
@@ -96,7 +95,8 @@ def top_up_helper(stack, n, plant, func):
         print(plant.type)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=81)
     top_up()
+    app.run(host='0.0.0.0', port=81)
+    
 
 
