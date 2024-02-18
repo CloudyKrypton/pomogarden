@@ -234,6 +234,15 @@ function encourage() {
 function clearBubble(plantName) {
   var clearPlant = document.getElementById("text-" + plantName);
   clearPlant.style.display = "none";
+  topUp();
+}
+
+function topUp() {
+  fetch('/top_up')
+        .then(response => response.json())
+        .then(data => {
+        })
+        .catch(error => console.error('Error:', error));
 }
 
 // Menu
