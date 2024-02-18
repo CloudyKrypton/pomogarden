@@ -240,12 +240,21 @@ function clearBubble(plantName) {
 function closeMenu() {
   var menu = document.getElementById('menu');
   menu.style.display = "none";
+  var fade = document.getElementById('fade');
+  fade.style.display = "none";
 }
 
 // Music & SFX
+var musicPaused = true;
+var audio = document.getElementById('background-music');
 function playBackgroundMusic() {
-  var audio = document.getElementById('background-music');
-  audio.play();
+  if (musicPaused) {
+    audio.play();
+    musicPaused = false;
+  } else {
+    audio.pause();
+    musicPaused = true;
+  }
 }
 
 function playClick() {
