@@ -22,9 +22,10 @@
         <div id="text-cactus-2" class="plant-text"></div>
         <div id="text-bonsai-2" class="plant-text"></div>
         <div class="all-container">
+            <div id="fade"></div>
             <div id="menu">
-                <p>Welcome to Pomogarden!</p>
-                <p>Pomogarden was inspired by the Pomodoro technique developed
+                <p class="menu-title">Welcome to Pomogarden!</p>
+                <p>Pomogarden was inspired by the <i>Pomodoro technique</i> developed
                     by Francesco Cirillo. We aim to provide a functional and relaxing
                     Pomodoro timer for the user, with extra special features for your
                     hard work! These days, studying can be a tiresome grind, and we hope
@@ -33,16 +34,22 @@
                 </p>
                 <p>Features:</p>
                 <ul>
+                    <li>Set your own pomodoro timer: 25 minutes for a study session, then 5
+                        minutes for a break.
+                    </li>
                     <li>Each plant has its own personality! They love to talk
                         (but not as much when it's time to work), so don't be shy--
                         click on one to "hear" it talk!
                     </li>
                     <li>Interact with plants in between breaks to learn tips and tricks
-                        about wellness and well-being.
+                        related to studying.
                     </li>
                 </ul>
+                <div class="bottom-text">Music: stream cafe - boba date</div>
+                <div class="bottom-text">Made with 💚 by Janet & Joseph</div>
                 <div class="close-menu-container">
-                    <button id="close-menu" onclick="closeMenu(); playBackgroundMusic(); playClick()">Let's get started!</button>
+                    <button id="menu-music-btn" onclick="playClick(); playBackgroundMusic();"></button>
+                    <button id="close-menu" onclick="closeMenu(); playClick()">Let's get started!</button>
                 </div>
             </div>
             <div class="header"></div>
@@ -53,10 +60,10 @@
                     <div id="cactus" class="plant" onclick="getData('cactus', 'cactus', 1); playClick()"></div>
                     <div id="dandelion" class="plant" onclick="getData('dandelion', 'dandelion', 2); playClick()"></div>
                     <div id="cactus-1" class="plant" onclick="getData('cactus-1', 'cactus', 3); playClick()"></div>
-                    <div id="dandelion-1" class="plant" onclick="getData('dandelion-1', 'cactus', 4); playClick()"></div>
-                    <div id="bonsai-1" class="plant" onclick="getData('bonsai-1', 'cactus', 5); playClick()"></div>
+                    <div id="dandelion-1" class="plant" onclick="getData('dandelion-1', 'dandelion', 4); playClick()"></div>
+                    <div id="bonsai-1" class="plant" onclick="getData('bonsai-1', 'bonsai', 5); playClick()"></div>
                     <div id="cactus-2" class="plant" onclick="getData('cactus-2', 'cactus', 6); playClick()"></div>
-                    <div id="bonsai-2" class="plant" onclick="getData('bonsai-2', 'cactus', 7); playClick()"></div>
+                    <div id="bonsai-2" class="plant" onclick="getData('bonsai-2', 'bonsai', 7); playClick()"></div>
                 </div>
                 <div class="mechanics-container">
                     <div class="timer">
