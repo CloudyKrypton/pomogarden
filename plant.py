@@ -20,7 +20,8 @@ class Plant:
                 temperature=0.9,
                 preamble_override=self.preamble,
                 documents=self.documents,
-                conversation_id=self.type
+                conversation_id=self.type,
+                max_tokens=100
             )
         elif mode == "web_search":
             response = co.chat(
@@ -29,7 +30,8 @@ class Plant:
                 temperature=0.7,
                 preamble_override=self.preamble,
                 connectors=[{"id": "web-search"}],
-                conversation_id=self.type
+                conversation_id=self.type,
+                max_tokens=100
             )
 
         print(response.text)
