@@ -1,10 +1,10 @@
 // Timer variables
 let timer;
 let isPaused = false;
-// let minutes = 25;
-// let seconds = 0;
-let minutes = 0;
-let seconds = 5;
+let minutes = 25;
+let seconds = 0;
+// let minutes = 0;
+// let seconds = 5;
 let isBreak = false;
 const timerDisplay = document.getElementById("timer-display");
 const breakDisplay = document.getElementById("break-display");
@@ -48,9 +48,9 @@ function updateTimer() {
       alert("Timer completed!");
       toggleButtons();
       if (!isBreak) {
-        // minutes = 5;
+        minutes = 5;
         encourage();
-        seconds = 3;
+        // seconds = 3;
         isBreak = true;
         cycleNumber++;
         grow();
@@ -58,8 +58,8 @@ function updateTimer() {
         breakDisplay.style.display = "flex";
         breakDisplay.textContent = `${pad(minutes)}:${pad(seconds)}`;
       } else {
-        // minutes = 25;
-        seconds = 5;
+        minutes = 25;
+        // seconds = 5;
         isBreak = false;
         timerDisplay.style.display = "flex";
         breakDisplay.style.display = "none";
