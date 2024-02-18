@@ -6,17 +6,25 @@ class Plant:
     preamble: str
     documents: List[Dict[str, str]]
 
-    def plant_msg(self, prompt) -> str:
+    def plant_msg(self, prompt, mode) -> str:
         co = cohere.Client('GbLhM3APFZEtc07r1T6HHIXj6H3JYVevrNudGhNc')
-    
-        response = co.chat(
-            model='command-nightly',  
-            message=prompt,
-            temperature=0.6,
-            preamble_override=self.preamble,
-            documents=self.documents,
-            max_tokens=100
-        )
+
+        if mode == "docs":
+            response = co.chat(
+                model='command-nightly',  
+                message=prompt,
+                temperature=0.8,
+                preamble_override=self.preamble,
+                documents=self.documents
+            )
+        elif mode == "web_search":
+            response = co.chat(
+                model='command-nightly',  
+                message=prompt,
+                temperature=0.8,
+                preamble_override=self.preamble,
+                connectors=[{"id" : "web_search"}]
+            )
 
         print(response.text)
         return(response.text)
