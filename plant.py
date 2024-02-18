@@ -13,7 +13,7 @@ class Plant:
             response = co.chat(
                 model='command-nightly',  
                 message=prompt,
-                temperature=0.8,
+                temperature=1,
                 preamble_override=self.preamble,
                 documents=self.documents
             )
@@ -23,7 +23,7 @@ class Plant:
                 message=prompt,
                 temperature=0.8,
                 preamble_override=self.preamble,
-                connectors=[{"id" : "web_search"}]
+                connectors=[{"id": "web-search"}]
             )
 
         print(response.text)
