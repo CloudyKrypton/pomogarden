@@ -34,7 +34,9 @@ def plant_motivate(plant_name):
 
 def get_motivate(plant_name):
     plant = plants_dict[plant_name]
-    prompt = "I am procrastinating on studies. Encourage me to stay on task in a manner that fits your personality. Respond in a single sentence."
+    prompt1 = "I am procrastinating on studies. Encourage me to stay on task in a manner that fits your personality. Respond in a single sentence."
+    prompt2 = "I should be doing homework right now. Motivate me to continue studying in a manner that fits your personality. Respond in a single sentence."
+    prompt = random.choice([prompt1, prompt2])
     motivational_msg = plant.plant_msg(prompt, "docs")
     return motivational_msg
 
@@ -67,7 +69,8 @@ def get_fact(plant_name):
     prompt1 = f"Tell me a fun fact about {plant_name} in a manner that fits your personality. Respond in a single sentence."
     prompt2 = "Give me a mental health tip in a manner that fits your personality. Respond in a single sentence."
     prompt3 = "Give me a study tip in a manner that fits your personality. Respond in a single sentence."
-    prompt = random.choice([prompt1, prompt2, prompt3])
+    prompt4 = f"What's a basic piece of information about {plant_name} plants? Respond in a single sentence."
+    prompt = random.choice([prompt1, prompt2, prompt3, prompt4])
     fact_msg = plant.plant_msg(prompt, "web_search")
     return fact_msg
 
@@ -78,11 +81,11 @@ def top_up():
         print(plant.type)
         for stack_name in msg_dict.keys():
             if stack_name == "motivational":
-                top_up_helper(msg_dict[stack_name], 5, plant, get_motivate)
+                top_up_helper(msg_dict[stack_name], 4, plant, get_motivate)
             elif stack_name == "congratulatory":
                 top_up_helper(msg_dict[stack_name], 1, plant, get_congratulate)
             elif stack_name == "fact":
-                top_up_helper(msg_dict[stack_name], 5, plant, get_fact)
+                top_up_helper(msg_dict[stack_name], 4, plant, get_fact)
             else:
                 return "0"
     return "1"
