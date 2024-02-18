@@ -6,7 +6,7 @@ import random
 app = Flask(__name__, static_url_path='/static')
 
 # Initialize plants and message stacks
-plant_classes = [Cactus, Bonsai, Dandelion]
+plant_classes = [Bonsai, Cactus, Dandelion]
 plants_dict = {}
 for plant_class in plant_classes:
     plant = plant_class()
