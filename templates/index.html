@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>pomogarden</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='pomogarden.css') }}">
-        <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google" content="notranslate">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,21 +12,50 @@
         <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="plant-text">
-            <div id="text-bonsai"></div>
-        </div>
+        <audio src="../static/sfx/boba-date.mp3" id="background-music" loop></audio>
+        <div id="text-bonsai" class="plant-text"></div>
+        <div id="text-tomato" class="plant-text">Encourage me to keep studying. Respond in a single sentence.</div>
+        <div id="text-dandelion" class="plant-text"></div>
+        <div id="text-cactus" class="plant-text">Encourage me to keep studying. Respond in a single sentence.</div>
+        <div id="text-pothos" class="plant-text">Encourage me to keep studying. Respond in a single sentence.</div>
+        <div id="text-firenettle" class="plant-text">Encourage me to keep studying. Respond in a single sentence.</div>
+        <div id="text-mushroom" class="plant-text">Encourage me to keep studying. Respond in a single sentence.</div>
+        <div id="text-violet" class="plant-text">Encourage me to keep studying. Respond in a single sentence.</div>
         <div class="all-container">
-            <div class="menu">info</div>
-            <div class="title">pomogarden</div>
+            <div id="menu">
+                <p>Welcome to Pomogarden!</p>
+                <p>Pomogarden was inspired by the Pomodoro technique developed
+                    by Francesco Cirillo. We aim to provide a functional and relaxing
+                    Pomodoro timer for the user, with extra special features for your
+                    hard work! These days, studying can be a tiresome grind, and we hope
+                    that this little virtual garden will bring you some comfort between
+                    breaks.
+                </p>
+                <p>Features:</p>
+                <ul>
+                    <li>Each plant has its own personality! They love to talk
+                        (but not as much when it's time to work), so don't be shy--
+                        click on one to "hear" it talk!
+                    </li>
+                    <li>Interact with plants in between breaks to learn tips and tricks
+                        about wellness and well-being.
+                    </li>
+                </ul>
+                <div class="close-menu-container">
+                    <button id="close-menu" onclick="closeMenu(); playBackgroundMusic(); playClick()">Let's get started!</button>
+                </div>
+            </div>
+            <div class="header"></div>
+            <div class="title"></div>
             <div class="display-container">
                 <div class="plant-container">
-                    <div id="bonsai" class="plant" onclick="getData('bonsai')">Item 1</div>
+                    <div id="bonsai" class="plant" onclick="getData('bonsai'); playClick()">Item 1</div>
                     <div id="tomato" class="plant">Item 2</div>
-                    <div id="dandelion" class="plant">Item 3</div>
-                    <div id="cactus" class="plant">Item 4</div>
+                    <div id="dandelion" class="plant" onclick="getData('dandelion'); playClick()">Item 3</div>
+                    <div id="cactus" class="plant" onclick="getData('cactus'); playClick()">Item 4</div>
                     <div id="pothos" class="plant">Item 5</div>
                     <div id="firenettle" class="plant">Item 6</div>
-                    <div id="mushrooms" class="plant">Item 7</div>
+                    <div id="mushroom" class="plant">Item 7</div>
                     <div id="violet" class="plant">Item 8</div>
                 </div>
                 <div class="mechanics-container">
