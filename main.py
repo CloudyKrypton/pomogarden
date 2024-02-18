@@ -34,6 +34,7 @@ def plant_congratulate(plant_name):
     plant = plants_dict[plant_name]
     prompt = "I just completed a productive study session. Praise me for my hard work in a manner that fits your personality. Respond in a single sentence."
     congratulation_msg = plant.plant_msg(prompt)
+    print(congratulation_msg)
     return jsonify({"msg": congratulation_msg})
 
 @app.route('/plant_fact/<plant_name>', methods=['GET'])

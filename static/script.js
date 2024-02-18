@@ -8,6 +8,9 @@ let seconds = 5;
 let isBreak = false;
 const timerDisplay = document.getElementById("timer-display");
 const breakDisplay = document.getElementById("break-display");
+let planted = [false, false, false, false, false, false, false, false];
+let names = ['bonsai', 'cactus', 'dandelion', 'cactus-1', 'dandelion-1', 'bonsai-1', 'cactus-2', 'bonsai-2'];
+let types = ['bonsai', 'cactus', 'dandelion', 'cactus', 'dandelion', 'bonsai', 'cactus', 'bonsai'];
 
 // Audio variables
 var notif = new Audio('static/sfx/notification.mp3');
@@ -46,6 +49,7 @@ function updateTimer() {
       toggleButtons();
       if (!isBreak) {
         // minutes = 5;
+        encourage();
         seconds = 3;
         isBreak = true;
         cycleNumber++;
@@ -99,31 +103,75 @@ function toggleButtons() {
 }
 
 const bonsai = document.getElementById("bonsai");
+const cactus = document.getElementById("cactus");
+const dandelion = document.getElementById("dandelion");
+const cactus1 = document.getElementById("cactus-1");
+const dandelion1 = document.getElementById("dandelion-1");
+const bonsai1 = document.getElementById("bonsai-1");
+const cactus2 = document.getElementById("cactus-2");
+const bonsai2 = document.getElementById("bonsai-2");
 
 function plantSeed() {
     if (cycleNumber == 1) {
+        planted[0] = true;
         bonsai.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 2) {
-        tomato.style.backgroundImage = 'url("static/images/seedling.png")';
+        planted[1] = true;
+        cactus.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 3) {
+        planted[2] = true;
         dandelion.style.backgroundImage = 'url("static/images/seedling.png")';
     } else if (cycleNumber == 4) {
-        cactus.style.backgroundImage = 'url("static/images/seedling.png")';
+        planted[3] = true;
+        cactus1.style.backgroundImage = 'url("static/images/seedling.png")';
+    } else if (cycleNumber == 5) {
+      planted[4] = true;
+      dandelion1.style.backgroundImage = 'url("static/images/seedling.png")';
+    } else if (cycleNumber == 6) {
+      planted[5] = true;
+      bonsai1.style.backgroundImage = 'url("static/images/seedling.png")';
+    } else if (cycleNumber == 7) {
+      planted[6] = true;
+      cactus2.style.backgroundImage = 'url("static/images/seedling.png")';
+    } else if (cycleNumber == 8) {
+      planted[7] = true;
+      bonsai2.style.backgroundImage = 'url("static/images/seedling.png")';
     }
 }
 
 function grow() {
-    if (cycleNumber == 2) {
-        bonsai.style.backgroundImage = 'url("static/images/bonsai-sprout.png")';
-    } else if (cycleNumber == 3) {
-        bonsai.style.backgroundImage = 'url("static/images/bonsai-grown.png")';
-    }
+  if (cycleNumber == 2) {
+    bonsai.style.backgroundImage = 'url("static/images/bonsai-sprout.png")';
+  } else if (cycleNumber == 3) {
+    bonsai.style.backgroundImage = 'url("static/images/bonsai-grown.png")';
+    cactus.style.backgroundImage = 'url("static/images/cactus-sprout.png")';
+  } else if (cycleNumber == 4) {
+    cactus.style.backgroundImage = 'url("static/images/cactus-grown.png")';
+    dandelion.style.backgroundImage = 'url("static/images/dandelion-sprout.png")';
+  } else if (cycleNumber == 5) {
+    dandelion.style.backgroundImage = 'url("static/images/dandelion-grown.png")';
+    cactus1.style.backgroundImage = 'url("static/images/cactus-sprout.png")';
+  } else if (cycleNumber == 6) {
+    cactus1.style.backgroundImage = 'url("static/images/cactus-grown.png")';
+    dandelion1.style.backgroundImage = 'url("static/images/dandelion-sprout.png")';
+  } else if (cycleNumber == 7) {
+    dandelion1.style.backgroundImage = 'url("static/images/dandelion-grown.png")';
+    bonsai1.style.backgroundImage = 'url("static/images/bonsai-sprout.png")';
+  } else if (cycleNumber == 8) {
+    bonsai1.style.backgroundImage = 'url("static/images/bonsai-grown.png")';
+    cactus2.style.backgroundImage = 'url("static/images/cactus-sprout.png")';
+  } else if (cycleNumber == 9) {
+    cactus2.style.backgroundImage = 'url("static/images/cactus-grown.png")';
+    bonsai2.style.backgroundImage = 'url("static/images/bonsai-sprout.png")';
+  } else if (cycleNumber == 10) {
+    bonsai2.style.backgroundImage = 'url("static/images/bonsai-grown.png")';
+  }
 }
 
 // Text
-function getData(plantName) {
+function getData(plantName, typeName) {
     // Make an AJAX request to the Flask server
-    fetch('/plant_motivate/' + plantName)
+    fetch('/plant_motivate/' + typeName)
         .then(response => response.json())
         .then(data => {
             // Update the result div with the data
@@ -133,6 +181,23 @@ function getData(plantName) {
             setTimeout(function() {clearBubble(plantName); }, 6000);
         })
         .catch(error => console.error('Error:', error));
+}
+
+function encourage() {
+  for (let i = 0; i < 8; i++) {
+    if (planted[i]) {
+      fetch('/plant_congratulate/' + types[i])
+        .then(response => response.json())
+        .then(data => {
+            // Update the result div with the data
+            var loadPlant = document.getElementById("text-" + names[i]);
+            loadPlant.style.display = "flex";
+            document.getElementById('text-' + names[i]).innerText = data.msg;
+            setTimeout(function() {clearBubble(names[i]); }, 9000);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+  }
 }
 
 function clearBubble(plantName) {

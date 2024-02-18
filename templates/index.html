@@ -14,13 +14,13 @@
     <body>
         <audio src="../static/sfx/boba-date.mp3" id="background-music" loop></audio>
         <div id="text-bonsai" class="plant-text"></div>
-        <div id="text-tomato" class="plant-text">Encourage me to keep studying. Respond in a single sentence.</div>
+        <div id="text-cactus" class="plant-text"></div>
         <div id="text-dandelion" class="plant-text"></div>
-        <div id="text-cactus" class="plant-text">Encourage me to keep studying. Respond in a single sentence.</div>
-        <div id="text-pothos" class="plant-text">Encourage me to keep studying. Respond in a single sentence.</div>
-        <div id="text-firenettle" class="plant-text">Encourage me to keep studying. Respond in a single sentence.</div>
-        <div id="text-mushroom" class="plant-text">Encourage me to keep studying. Respond in a single sentence.</div>
-        <div id="text-violet" class="plant-text">Encourage me to keep studying. Respond in a single sentence.</div>
+        <div id="text-cactus-1" class="plant-text"></div>
+        <div id="text-dandelion-1" class="plant-text"></div>
+        <div id="text-bonsai-1" class="plant-text"></div>
+        <div id="text-cactus-2" class="plant-text"></div>
+        <div id="text-bonsai-2" class="plant-text"></div>
         <div class="all-container">
             <div id="menu">
                 <p>Welcome to Pomogarden!</p>
@@ -49,14 +49,14 @@
             <div class="title"></div>
             <div class="display-container">
                 <div class="plant-container">
-                    <div id="bonsai" class="plant" onclick="getData('bonsai'); playClick()">Item 1</div>
-                    <div id="tomato" class="plant">Item 2</div>
-                    <div id="dandelion" class="plant" onclick="getData('dandelion'); playClick()">Item 3</div>
-                    <div id="cactus" class="plant" onclick="getData('cactus'); playClick()">Item 4</div>
-                    <div id="pothos" class="plant">Item 5</div>
-                    <div id="firenettle" class="plant">Item 6</div>
-                    <div id="mushroom" class="plant">Item 7</div>
-                    <div id="violet" class="plant">Item 8</div>
+                    <div id="bonsai" class="plant" onclick="getData('bonsai', 'bonsai'); playClick()"></div>
+                    <div id="cactus" class="plant" onclick="getData('cactus', 'cactus'); playClick()"></div>
+                    <div id="dandelion" class="plant" onclick="getData('dandelion', 'dandelion'); playClick()"></div>
+                    <div id="cactus-1" class="plant" onclick="getData('cactus-1', 'cactus'); playClick()"></div>
+                    <div id="dandelion-1" class="plant" onclick="getData('dandelion-1', 'cactus'); playClick()"></div>
+                    <div id="bonsai-1" class="plant" onclick="getData('bonsai-1', 'cactus'); playClick()"></div>
+                    <div id="cactus-2" class="plant" onclick="getData('cactus-2', 'cactus'); playClick()"></div>
+                    <div id="bonsai-2" class="plant" onclick="getData('bonsai-2', 'cactus'); playClick()"></div>
                 </div>
                 <div class="mechanics-container">
                     <div class="timer">

@@ -45,21 +45,11 @@ body {
     border-radius: 12px 12px 0px 0px;
 }
 
-.plant {
+/* .plant {
     border: 0.1px solid red;
-}
+} */
 
 #bonsai {
-    background-image: url("images/pot.png");
-    background-size: cover;
-}
-
-#tomato {
-    background-image: url("images/pot.png");
-    background-size: cover;
-}
-
-#dandelion {
     background-image: url("images/pot.png");
     background-size: cover;
 }
@@ -69,22 +59,32 @@ body {
     background-size: cover;
 }
 
-#pothos {
+#dandelion {
     background-image: url("images/pot.png");
     background-size: cover;
 }
 
-#firenettle {
+#cactus-1 {
     background-image: url("images/pot.png");
     background-size: cover;
 }
 
-#mushroom {
+#dandelion-1 {
     background-image: url("images/pot.png");
     background-size: cover;
 }
 
-#violet {
+#bonsai-1 {
+    background-image: url("images/pot.png");
+    background-size: cover;
+}
+
+#cactus-2 {
+    background-image: url("images/pot.png");
+    background-size: cover;
+}
+
+#bonsai-2 {
     background-image: url("images/pot.png");
     background-size: cover;
 }
@@ -108,7 +108,7 @@ body {
     border-color: black;
 }
 
-#text-tomato {
+#text-cactus {
     top: 11vw;
     left: 43vw;
     position: absolute;
@@ -136,7 +136,7 @@ body {
     border-color: black;
 }
 
-#text-cactus {
+#text-cactus-1 {
     top: 11vw;
     left: 72vw;
     position: absolute;
@@ -150,7 +150,7 @@ body {
     border-color: black;
 }
 
-#text-pothos {
+#text-dandelion-1 {
     top: 28vw;
     left: 27vw;
     position: absolute;
@@ -164,7 +164,7 @@ body {
     border-color: black;
 }
 
-#text-firenettle {
+#text-bonsai-1 {
     top: 28vw;
     left: 40vw;
     position: absolute;
@@ -178,7 +178,7 @@ body {
     border-color: black;
 }
 
-#text-mushroom{
+#text-cactus-2 {
     top: 24vw;
     left: 58vw;
     position: absolute;
@@ -192,7 +192,7 @@ body {
     border-color: black;
 }
 
-#text-violet {
+#text-bonsai-2 {
     top: 23vw;
     left: 72vw;
     position: absolute;
@@ -265,6 +265,10 @@ body {
     padding-top: 0.1vw;
 }
 
+#start-btn:hover {
+    cursor: pointer;
+}
+
 #pause-btn {
     background: url("images/pausebtn.png");
     background-size: cover;
@@ -273,6 +277,10 @@ body {
     width: 3.5vw;
     border-radius: 8px;
     border-width: none;
+}
+
+#pause-btn:hover {
+    cursor: pointer;
 }
 
 /* Menu */
@@ -297,4 +305,8 @@ body {
 
 #close-menu {
 
+}
+
+#close-menu:hover {
+    cursor: pointer;
 }
