@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>pomogarden</title>
-        <link rel="stylesheet" href="pomogarden.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='pomogarden.css') }}">
         <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google" content="notranslate">
@@ -18,7 +18,6 @@
             <div class="display-container">
                 <div class="plant-container">
                     <div id="bonsai" class="plant">Item 1</div>
-                    <div id="text-bonsai"></div>
                     <div id="tomato" class="plant">Item 2</div>
                     <div id="dandelion" class="plant">Item 3</div>
                     <div id="cactus" class="plant">Item 4</div>
@@ -39,6 +38,6 @@
                 </div>
             </div>
         </div>
-        <script src="script.js"></script>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
     </body>
 </html>

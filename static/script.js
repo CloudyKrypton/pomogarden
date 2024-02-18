@@ -10,9 +10,8 @@ const timerDisplay = document.getElementById("timer-display");
 const breakDisplay = document.getElementById("break-display");
 
 // Audio variables
-var notif = new Audio('notification.mp3');
-var clickSound = new Audio('click-sound.mp3');
-var popSound = new Audio('audios/pop-sound.mp3');
+var notif = new Audio('sfx/notification.mp3');
+var clickSound = new Audio('sfx/click-sound.mp3');
 
 // Cycle variables
 var cycleNumber = 1;
@@ -102,21 +101,21 @@ const bonsai = document.getElementById("bonsai");
 
 function plantSeed() {
     if (cycleNumber == 1) {
-        bonsai.style.backgroundImage = 'url("../images/seedling.png")';
+        bonsai.style.backgroundImage = 'url("images/seedling.png")';
     } else if (cycleNumber == 2) {
-        tomato.style.backgroundImage = 'url("../images/seedling.png")';
+        tomato.style.backgroundImage = 'url("images/seedling.png")';
     } else if (cycleNumber == 3) {
-        dandelion.style.backgroundImage = 'url("../images/seedling.png")';
+        dandelion.style.backgroundImage = 'url("images/seedling.png")';
     } else if (cycleNumber == 4) {
-        cactus.style.backgroundImage = 'url("../images/seedling.png")';
+        cactus.style.backgroundImage = 'url("images/seedling.png")';
     }
 }
 
 function grow() {
     if (cycleNumber == 2) {
-        bonsai.style.backgroundImage = 'url("../images/bonsai-sprout.png")';
+        bonsai.style.backgroundImage = 'url("images/bonsai-sprout.png")';
     } else if (cycleNumber == 3) {
-        bonsai.style.backgroundImage = 'url("../images/bonsai-grown.png")';
+        bonsai.style.backgroundImage = 'url("images/bonsai-grown.png")';
     }
 }
 
