@@ -12,6 +12,7 @@ const breakDisplay = document.getElementById("break-display");
 // Audio variables
 var notif = new Audio('static/sfx/notification.mp3');
 var clickSound = new Audio('static/sfx/click-sound.mp3');
+var clickReg = new Audio('static/sfx/click-regular.mp3');
 
 // Cycle variables
 var cycleNumber = 1;
@@ -38,8 +39,8 @@ function pauseTimer() {
 function updateTimer() {
   if (!isPaused) {
     if (minutes === 0 && seconds === 0) {
-      clearInterval(timer);
       notif.play();
+      clearInterval(timer);
       timer = null;
       alert("Timer completed!");
       toggleButtons();
@@ -137,4 +138,20 @@ function getData(plantName) {
 function clearBubble(plantName) {
   var clearPlant = document.getElementById("text-" + plantName);
   clearPlant.style.display = "none";
+}
+
+// Menu
+function closeMenu() {
+  var menu = document.getElementById('menu');
+  menu.style.display = "none";
+}
+
+// Music & SFX
+function playBackgroundMusic() {
+  var audio = document.getElementById('background-music');
+  audio.play();
+}
+
+function playClick() {
+  clickReg.play();
 }
