@@ -238,6 +238,7 @@ function clearBubble(plantName) {
 }
 
 function topUp() {
+  console.log("topup");
   fetch('/top_up')
         .then(response => response.json())
         .then(data => {

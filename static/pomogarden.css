@@ -1,6 +1,8 @@
 body {
     margin: 0px;
     background-color: #decca2;
+    /* background-image: url("images/back-background.png");
+    background-size: contain; */
 }
 
 #background-music {
@@ -281,6 +283,19 @@ body {
 
 #pause-btn:hover {
     cursor: pointer;
+}
+
+.music-holder {
+    padding-top: 2.5vw;
+}
+
+#music-btn {
+    background: url("images/music.png");
+    background-size: cover;
+    height: 3.111vw;
+    width: 3.5vw;
+    border-radius: 8px;
+    border-width: none;
 }
 
 /* Menu */
