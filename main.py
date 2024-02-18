@@ -20,9 +20,23 @@ def garden():
 @app.route('/plant_motivate/<plant_name>', methods=['GET'])
 def plant_motivate(plant_name):
     plant = plants_dict[plant_name]()
-    prompt = "Encourage me to keep studying. Respond in a single sentence."
+    prompt = "I am procrastinating on studies. Encourage me to continue studying. Respond in a single sentence."
     motivational_msg = plant.plant_chat(prompt)
     return jsonify({"msg": motivational_msg})
+
+@app.route('/plant_congratulate/<plant_name>', methods=['GET'])
+def plant_congratulate(plant_name):
+    plant = plants_dict[plant_name]()
+    prompt = "I just completed a productive study session. Praise me for my hard work. Respond in a single sentence."
+    congratulation_msg = plant.plant_chat(prompt)
+    return jsonify({"msg": congratulation_msg})
+
+@app.route('/plant_fact/<plant_name>', methods=['GET'])
+def plant_fact(plant_name):
+    plant = plants_dict[plant_name]()
+    prompt = f"Tell me a fun fact about {plant_name}."
+    fact_msg = plant.plant_chat(prompt)
+    return jsonify({"msg": fact_msg})
 
 
 if __name__ == '__main__':
