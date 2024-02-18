@@ -1,6 +1,8 @@
 body {
     margin: 0px;
     background-color: #decca2;
+    /* background-image: url("images/back-background.png");
+    background-size: contain; */
 }
 
 #background-music {
