@@ -84,17 +84,21 @@ body {
 
 .plant-text {
     font-family: 'Figtree', sans-serif;
-    font-size: small;
+    font-size: xx-small;
 }
 
 #text-bonsai {
-    background-color: aliceblue;
+    background-color: #e4c142;
     position: absolute;
     top: 11vw;
     left: 27vw;
     max-width: 8.5vw;
-    padding: 3px;
+    padding: 5px;
     border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    display: none;
 }
 
 .mechanics-container {
