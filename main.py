@@ -43,6 +43,13 @@ def plant_fact(plant_name):
     fact_msg = plant.plant_msg(prompt)
     return jsonify({"msg": fact_msg})
 
+@app.route('/mental_health_fact/<plant_name>', methods=['GET'])
+def plant_fact(plant_name):
+    plant = plants_dict[plant_name]
+    prompt = f"Give me a mental health tip in a manner that fits your personality."
+    fact_msg = plant.plant_msg(prompt)
+    return jsonify({"msg": fact_msg})
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=81)
