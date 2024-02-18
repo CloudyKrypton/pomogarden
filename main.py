@@ -27,7 +27,6 @@ def plant_motivate(plant_name):
     plant = plants_dict[plant_name]
     prompt = "I am procrastinating on studies. Encourage me to stay on task. Respond in a single sentence."
     motivational_msg = plant.plant_msg(prompt)
-    print(motivational_msg)
     return jsonify({"msg": motivational_msg})
 
 @app.route('/plant_congratulate/<plant_name>', methods=['GET'])
@@ -35,6 +34,7 @@ def plant_congratulate(plant_name):
     plant = plants_dict[plant_name]
     prompt = "I just completed a productive study session. Praise me for my hard work. Respond in a single sentence."
     congratulation_msg = plant.plant_msg(prompt)
+    print(congratulation_msg)
     return jsonify({"msg": congratulation_msg})
 
 @app.route('/plant_fact/<plant_name>', methods=['GET'])

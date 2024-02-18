@@ -45,9 +45,9 @@ body {
     border-radius: 12px 12px 0px 0px;
 }
 
-.plant {
+/* .plant {
     border: 0.1px solid red;
-}
+} */
 
 #bonsai {
     background-image: url("images/pot.png");
@@ -265,6 +265,10 @@ body {
     padding-top: 0.1vw;
 }
 
+#start-btn:hover {
+    cursor: pointer;
+}
+
 #pause-btn {
     background: url("images/pausebtn.png");
     background-size: cover;
@@ -273,6 +277,10 @@ body {
     width: 3.5vw;
     border-radius: 8px;
     border-width: none;
+}
+
+#pause-btn:hover {
+    cursor: pointer;
 }
 
 /* Menu */
@@ -297,4 +305,8 @@ body {
 
 #close-menu {
 
+}
+
+#close-menu:hover {
+    cursor: pointer;
 }
