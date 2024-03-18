@@ -11,7 +11,10 @@ We used Cohere API as our large language model in this program to generate uniqu
 This webapp implements a pomodoro timer. If you haven’t heard of the pomodoro technique, briefly, it’s a scientifically researched way of structuring your working time - a 25 minute work period, then a five minute break. It has been proven to be a great method to keep students on track, especially those who lose their attention span quickly.
 Our webapp is also interactive! The garden grows with you as you study, and each plant has its own unique personality you can explore.
 
-### To run this project
+### Try pomogarden online!
+Visit https://yoshikuyuu.pythonanywhere.com/ to try out out project firsthand.
+
+### To run this project locally
 To run this project, you will need to do a couple of things:
 * Clone the repository
 * Run ```pip install flask```
