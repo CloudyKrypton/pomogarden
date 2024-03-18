@@ -12,7 +12,7 @@ This webapp implements a pomodoro timer. If you haven’t heard of the pomodoro 
 Our webapp is also interactive! The garden grows with you as you study, and each plant has its own unique personality you can explore.
 
 ### Try pomogarden online!
-Visit https://yoshikuyuu.pythonanywhere.com/ to try out out project firsthand.
+Visit https://yoshikuyuu.pythonanywhere.com/ to try out our project firsthand.
 
 ### To run this project locally
 To run this project, you will need to do a couple of things:
